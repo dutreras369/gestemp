@@ -1,0 +1,52 @@
+.env# === Archivos de entorno ===
+.env
+.env.*
+secrets/
+venv/
+.venv/
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+
+# === Paquetes y dependencias ===
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg-info
+*.manifest
+*.spec
+
+# === Entornos virtuales ===
+env/
+ENV/
+.venv/
+venv/
+venv.bak/
+
+# === Configuración de IDEs ===
+.vscode/
+.idea/
+*.iml
+
+# === Archivos de logs y cache ===
+*.log
+*.pot
+*.mo
+*.db
+*.sqlite3
+
+# === Otros ===
+.DS_Store
+Thumbs.db
