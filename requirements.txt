@@ -1,0 +1,4 @@
+mysql-connector-python==9.0.0
+bcrypt==4.2.0
+python-dotenv==1.0.1
+click==8.1.7
