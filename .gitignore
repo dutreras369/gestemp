@@ -12,6 +12,7 @@ __pycache__/
 *.pyd
 *.pyc
 *.so
+.pytest_cache/
 
 # === Paquetes y dependencias ===
 *.egg
