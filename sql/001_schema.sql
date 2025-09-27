@@ -113,3 +113,30 @@ CREATE TABLE usuarios (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+-- ===============
+-- TABLA: indicadores_valores
+-- ===============
+CREATE TABLE IF NOT EXISTS indicadores_valores (
+  id           INT AUTO_INCREMENT PRIMARY KEY,
+  nombre       VARCHAR(20) NOT NULL,
+  fecha_valor  DATE NOT NULL,
+  valor        DECIMAL(16,6) NOT NULL,
+  proveedor    VARCHAR(100) NOT NULL,
+  UNIQUE KEY uq_indicador_fecha (nombre, fecha_valor)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- ===============
+-- TABLA: indicadores_consultas
+-- ===============
+CREATE TABLE IF NOT EXISTS indicadores_consultas (
+  id             INT AUTO_INCREMENT PRIMARY KEY,
+  nombre         VARCHAR(20) NOT NULL,
+  fecha_valor    DATE NULL,
+  desde          DATE NULL,
+  hasta          DATE NULL,
+  consultado_por VARCHAR(60) NOT NULL,
+  consultado_en  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  proveedor      VARCHAR(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

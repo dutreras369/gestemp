@@ -64,3 +64,33 @@ Para visualizar la estructura completa, consulta el archivo:
 📂 [docs/uml.md](docs/uml.md)
 
 El diagrama UML muestra las clases principales, relaciones entre entidades y notas de diseño para la defensa académica.
+
+
+---
+
+## 📈 Etapa 2 – Indicadores Económicos
+
+En esta etapa el sistema se amplía con un módulo de **consulta y registro de indicadores económicos**:
+
+### Casos de uso principales
+- **CU-IND-01**: Consultar indicador por fecha (`indicadores fetch --tipo UF --fecha 2025-09-01`).
+- **CU-IND-02**: Consultar indicador por periodo (`indicadores fetch --tipo UF --desde ... --hasta ...`).
+- **CU-IND-03**: Guardar valores obtenidos en la base de datos (`indicadores save ...`).
+- **CU-IND-04**: Listar valores almacenados (`indicadores list --tipo UF --desde ... --hasta ...`).
+
+### Roles y permisos
+- **Admin/Gerente**: pueden consultar, guardar y listar indicadores.
+- **Usuario**: puede consultar y listar (no guardar).
+
+### Variables de entorno adicionales
+```
+INDICADORES_API_URL=<definir proveedor>
+INDICADORES_API_KEY=<si aplica>
+```
+
+### Tablas nuevas (ver `sql/README_etapa2.md`)
+- `indicadores_valores`: valores históricos (nombre, fecha, valor, proveedor).
+- `indicadores_consultas`: bitácora de consultas (qué, quién, cuándo, proveedor).
+
+
+
